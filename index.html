@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- タイトル -->
+    <title>R'y_PortFolio</title>
+
+    <meta name="description" content="初めて自分で設計し、コーディングしました。" />
+    
+    <link
+      href="https://use.fontawesome.com/releases/v5.6.1/css/all.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome-animation/0.0.10/font-awesome-animation.css"
+      type="text/css"
+      media="all"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP&family=Sriracha&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css"
+    />
+    <!-- ポップアップ用CSS -->
+    <link rel="stylesheet" href="css/lightbox.css">
+
+    <!-- CSSへのリンク -->
+    <link rel="stylesheet" href="css/style.css" />
+
+    <!-- アイコン -->
+    <link rel="shortcut icon" href="img/favicon.ico" />
+
+    <!-- Jquery(ライブラリ) -->
+    <script src="js/modules/jquery-3.5.1.min.js"></script>
+    <script src="js/modules/jquery.easing.1.3.js"></script>
+    <script src="js/modules/jquery.ba-throttle-debounce.js"></script>
+    <script src="js/modules/jquery.inview.js"></script>
+  </head>
+  <body id="top">
+    <!-- ヘッダー -->
+    <header class="header">
+      <div class="container">
+        <div class="header_content">
+          <h1 class="header_content_title">
+            <a class="header_link" href="#top">R'y_PortFolio</a>
+          </h1>
+
+          <nav class="header_content_nav">
+            <ul>
+              <li>
+                <a class="header_link" href="#about"
+                  >About<span class="bg"></span
+                ></a>
+              </li>
+              <li>
+                <a class="header_link" href="#skill"
+                  >Skill<span class="bg"></span
+                ></a>
+              </li>
+              <li>
+                <a class="header_link" href="#works"
+                  >Works<span class="bg"></span
+                ></a>
+              </li>
+            </ul>
+          </nav>
+
+
+          <div class="toggle_wrap">
+            <div class="toggle">
+              <nav class="hamburger">
+                <span class="toggle1"></span>
+                <span class="toggle2"></span>
+                <span class="toggle3"></span>
+              </nav>
+            </div>
+          </div>
+
+
+
+
+        </div>
+      </div>
+      <aside class="sidemenu">
+        <ul>
+          <li>
+            <a class="header_link" href="#about"
+              >About
+            </a>
+          </li>
+          <li>
+            <a class="header_link" href="#skill"
+              >Skill
+            </a>
+          </li>
+          <li>
+            <a class="header_link" href="#works"
+              >Works
+            </a>
+          </li>
+        </ul>
+      </aside>
+    </header>
+
+    <!-- スティッキーヘッダー -->
+    <header class="header_clone">
+      <div class="container">
+        <div class="header_content">
+          <h1 class="header_content_title">
+            <a class="header_link" href="#top">R'y_PortFolio</a>
+          </h1>
+
+          <nav class="header_content_nav">
+            <ul>
+              <li>
+                <a class="header_link" href="#about"
+                  >About<span class="bg"></span
+                ></a>
+              </li>
+              <li>
+                <a class="header_link" href="#skill"
+                  >Skill<span class="bg"></span
+                ></a>
+              </li>
+              <li>
+                <a class="header_link" href="#works"
+                  >Works<span class="bg"></span
+                ></a>
+              </li>
+            </ul>
+          </nav>
+
+          <div class="toggle_wrap">
+            <div class="toggle">
+              <nav class="hamburger">
+                <span class="toggle1"></span>
+                <span class="toggle2"></span>
+                <span class="toggle3"></span>
+              </nav>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </header>
+
+    <!-- ファーストビュー -->
+    <section class="fv">
+      <div class="fv_content">
+        <p class="fv_content_welcome animate__animated">
+          Welcome<i class="fas fa-pencil-alt i_sm pen"></i>
+        </p>
+        <h1 class="fv_content_title animate__animated">
+          Ryunosuke's Portfolio
+        </h1>
+        <p class="fv_content_text animate__animated">
+          僕のポートフォリオサイトをご覧頂きありがとうございます！<br />
+          このサイトは、「履歴書」というコンセプトで作りました。<br />
+          シンプルにデザインしたつもりなので、見やすいと思っていただければ幸いです。<br />
+          こちらのサイトの作成期間は約3日です。
+        </p>
+      </div>
+    </section>
+
+    <!-- メインコンテンツ -->
+    <main>
+      <!-- ABOUT -->
+      <section class="about p-top" id="about">
+        <h1 class="section_title animate__animated">About</h1>
+
+        <div class="main_container">
+          <div class="about_flex animate__animated">
+            <div class="about_left">
+              <div class="about_image_frame">
+                <img src="img/300x300.png" alt="テスト用" />
+              </div>
+            </div>
+
+            <div class="about_right">
+              <p class="my_name">Ryunosuke Yamada</p>
+
+              <div class="about_caption">
+                <p>出身地 : 埼玉県</p>
+                <p>高校を卒業してすぐに自動販売機の補充をする会社に入る。</p>
+                <p>自分の体力が持たずに約3ヵ月で退職。</p>
+                <p>2020年6月15日からプログラミングを独学で学び始める。</p>
+              </div>
+
+              <div class="icon_list">
+                <ul>
+
+                  <li>
+                    <a
+                      href="https://twitter.com/ProgramRy"
+                      class="faa-parent animated-hover"
+                    >
+                      <i class="fab fa-twitter-square faa-wrench i_m"></i>
+                    </a>
+                  </li>
+
+                  <li>
+                    <a
+                      href="https://github.com/ryunosukeyamada"
+                      class="faa-parent animated-hover"
+                    >
+                      <i class="fab fa-github-square faa-pulse i_m"></i>
+                    </a>
+                  </li>
+                  
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SKIL -->
+      <section class="skill p-top" id="skill">
+        <h1 class="section_title">Skills</h1>
+        <div class="main_container">
+          <p class="skill_text">さらにスキルを磨いていきます！</p>
+
+          <ul class="skill_caption1 animate__animated">
+            <li>
+              <i class="fab fa-html5 i_lg html"></i>
+              <p>HTML</p>
+            </li>
+            <li>
+              <i class="fab fa-css3-alt i_lg css"></i>
+              <p>CSS</p>
+            </li>
+            <li>
+              <i class="fab fa-js i_lg js"></i>
+              <p>JavaScript</p>
+            </li>
+          </ul>
+
+          <ul class="skill_caption2 animate__animated">
+            <li>
+              <i class="fab fa-vuejs i_lg vue"></i>
+              <p>Vue.js</p>
+            </li>
+            <li>
+              <i class="fab fa-php i_lg php"></i>
+              <p>PHP</p>
+            </li>
+            <li>
+              <i class="fab fa-github i_lg git"></i>
+              <p>Git</p>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- Works -->
+      <section class="works p-top" id="works">
+        <h1 class="section_title">Works</h1>
+        <div class="container">
+          <div class="works_item animate__animated">
+            <div class="works_left">
+              <h1 class="works_title">架空LP模写</h1>
+              <div class="works_caption">
+                <p>使用言語</p>
+                <ul>
+                  <li>HTML</li>
+                  <li>CSS</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="works_right">
+              <div class="works_image_frame">
+                <a href="img/lp1.png" data-lightbox="image">
+                  <img class="works_image" src="img/lp1fv.png"/>
+                </a>
+              </div>
+
+              <!-- <button type="button"><i class="fab fa-youtube fa-fw i_lg_sm"></i>Youtube</button> -->
+            </div>
+          </div>
+
+          <div class="works_item works_item_2 animate__animated">
+            <div class="works_left">
+              <h1 class="works_title">忍者コード:鎧模写</h1>
+              <div class="works_caption">
+                <p>使用言語</p>
+                <ul>
+                  <li>HTML</li>
+                  <li>CSS</li>
+                  <li>JavaScript (Jquery)</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="works_right">
+              <div class="works_image_frame">
+                <a href="img/lp2.png" data-lightbox="image">
+                  <img class="works_image" src="img/lp2fv.png"/>
+              </a>
+              </div>
+
+              <!-- <button type="button"><i class="fab fa-youtube fa-fw i_lg_sm"></i>Youtube</button> -->
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- フッター -->
+    <footer>
+      <div class="container">
+        <div class="footer_item">
+          <p class="copy"><small>&copy;2020 R'y Portfolio</small></p>
+
+          <a href="#top" class="btn_scroll header_link">
+            <i class="fas fa-arrow-circle-up i_sm"></i>
+          </a>
+
+          <div class="icon">
+            <a class="twitter" href="https://twitter.com/ProgramRy"
+              ><i class="fab fa-twitter i_sm"></i
+            ></a>
+            <a class="git" href="https://github.com/ryunosukeyamada"
+              ><i class="fab fa-github i_sm"></i
+            ></a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- スクリプト -->
+    <script src="js/modules/lightbox.min.js"></script>
+    <script src="js/main.js"></script>
+  </body>
+</html>

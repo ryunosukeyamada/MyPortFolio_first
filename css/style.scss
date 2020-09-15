@@ -1,0 +1,1097 @@
+/* resetCSS */
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+ol,
+ul {
+  list-style: none;
+}
+blockquote,
+q {
+  quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+* {
+  box-sizing: border-box;
+}
+// -----------------------------------
+@import "modules/animation";
+
+$color1: #fff;
+$color2: #333;
+
+$background1: rgba(0, 0, 0, 0.8);
+$background2: #f4f5f7;
+$background3: #161618;
+
+::selection {
+  background: #000;
+  color: #fff;
+}
+
+//Firefox
+::-moz-selection {
+  background: #000;
+  color: #fff;
+}
+
+body {
+  font-size: 18px;
+  line-height: 1.5;
+  letter-spacing: 0.3em;
+  background-color: $background3;
+  vertical-align: middle;
+  font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN",
+    "Hiragino Sans", Meiryo, sans-serif;
+}
+
+a {
+  color: $color1;
+  text-decoration: none;
+}
+
+.container {
+  max-width: 1080px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+// Font awesomeサイズ
+.i_lg_sm {
+  font-size: 15px;
+}
+.i_sm {
+  font-size: 30px;
+}
+.i_m {
+  font-size: 45px;
+}
+.i_lg {
+  font-size: 11em;
+}
+
+// ヘッダー
+.header {
+  height: 90px;
+  background-color: $background1;
+  color: $color1;
+  letter-spacing: 0.1em;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.05);
+  font-family: "Sriracha", cursive, sans-serif;
+
+  .sidemenu {
+    background-color: rgba(0, 0, 0, 0.6);
+    width: 100%;
+    height: 100vh;
+
+    position: fixed;
+    top: 0;
+    right: -100%;
+    z-index: 10;
+
+    ul {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      li {
+        margin: 100px 10px 0;
+        font-size: 2em;
+        a {
+          padding: 5px;
+          &:hover {
+            opacity: 0.5;
+          }
+        }
+      }
+    }
+  }
+}
+
+.header_content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  height: 90px;
+
+  &_title {
+    font-size: 2em;
+    margin-left: 10px;
+  }
+
+  &_nav ul {
+    display: flex;
+
+    li {
+      margin-right: 30px;
+      height: 100%;
+
+      a {
+        padding: 15px;
+        position: relative;
+
+        .bg {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 0;
+          border-radius: 5px;
+          height: 100%;
+          background-color: rgba(255, 255, 255, 0.473);
+        }
+      }
+    }
+  }
+
+  // ハンバーガーメニュー
+  .toggle_wrap {
+    z-index: 100;
+    margin-right: 20px;
+    display: none;
+    .toggle {
+      padding: 10px;
+      cursor: pointer;
+
+      span {
+        display: block;
+        width: 18px;
+        height: 2px;
+        background: $color1;
+        transition: all 0.3s;
+      }
+      .toggle2 {
+        margin: 5px 0;
+      }
+    }
+  }
+
+  .toggle_wrap.open {
+    .toggle {
+      span {
+        background: #ff0000;
+      }
+      .toggle1 {
+        width: 11px;
+        transform: translate(-1.5px, 3px) rotate(-45deg);
+      }
+      .toggle3 {
+        width: 11px;
+        transform: translate(-1.5px, -3px) rotate(45deg);
+      }
+    }
+  }
+}
+
+// ヘッダークローン
+.header_clone {
+  height: 60px;
+  background-color: $background2;
+  letter-spacing: 0.1em;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.05);
+  font-family: "Sriracha", cursive, sans-serif;
+  width: 100%;
+
+  // ヘッダークローンを隠してるプロパティ
+  position: fixed;
+  top: -100%;
+  left: -100%;
+  opacity: 0;
+  // ------------------------------
+  z-index: 10;
+  transition: all 0.6s;
+
+  .header_content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    height: 60px;
+
+    a {
+      color: $color2;
+    }
+
+    &_title {
+      font-size: 1.5em;
+      margin-left: 10px;
+    }
+
+    &_nav ul {
+      display: flex;
+
+      li {
+        margin-right: 30px;
+        height: 100%;
+
+        a {
+          padding: 5px;
+          position: relative;
+
+          .bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 0;
+            border-radius: 5px;
+            height: 100%;
+            background-color: rgba(14, 14, 14, 0.5);
+          }
+        }
+      }
+    }
+  }
+
+  // ハンバーガーメニュー
+  .toggle_wrap {
+    position: relative;
+    z-index: 1;
+    margin-right: 20px;
+    display: none;
+    .toggle {
+      padding: 13px;
+      cursor: pointer;
+
+      span {
+        display: block;
+        width: 18px;
+        height: 2px;
+        background: $color2;
+        transition: all 0.3s;
+      }
+      .toggle2 {
+        margin: 5px 0;
+      }
+    }
+  }
+
+  .toggle_wrap.open {
+    .toggle {
+      span {
+        background: #ff0000;
+      }
+      .toggle1 {
+        width: 11px;
+        transform: translate(-1.5px, 3px) rotate(-45deg);
+      }
+      .toggle3 {
+        width: 11px;
+        transform: translate(-1.5px, -3px) rotate(45deg);
+      }
+    }
+  }
+}
+.header_clone.active {
+  top: 0;
+  left: 0;
+  opacity: 0.95;
+  width: 100%;
+}
+
+// ファーストビュー
+.fv {
+  font-family: "Sriracha", cursive, sans-serif;
+  letter-spacing: 0.4em;
+  color: $color2;
+
+  min-height: 670px;
+  height: 80vh;
+  background-image: url(../img/fv_exsample.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &_content {
+    text-align: left;
+
+    &_welcome {
+      display: inline-block;
+      font-size: 1.6em;
+      position: relative;
+      padding-left: 29px;
+      letter-spacing: 0.2em;
+
+      &::after {
+        content: "";
+        height: 1px;
+        width: 100px;
+        opacity: 0;
+        // アニメーション
+        @include animation(border, 3s, $iteration-count: 1, $delay: 1.5s);
+        // ---------------
+        position: absolute;
+        bottom: 0;
+        left: 25%;
+        background-color: $color2;
+      }
+
+      & .pen {
+        position: absolute;
+        left: 55px;
+        top: -15px;
+        // アニメーション
+        opacity: 0;
+        @include animation(
+          pen-animation,
+          3s,
+          $iteration-count: 1,
+          $delay: 1.5s
+        );
+        // ----------------
+        color: $background1;
+      }
+    }
+
+    &_title {
+      font-size: 4em;
+      margin-top: 15px;
+    }
+    &_text {
+      margin-top: 15px;
+      line-height: 25px;
+      font-size: 0.8em;
+      font-weight: 600;
+      font-family: "Noto Sans JP", sans-serif;
+
+      opacity: 0;
+      &.active {
+        opacity: 1;
+      }
+    }
+  }
+}
+
+// メインコンテンツ
+
+.p-top {
+  padding-top: 100px;
+}
+
+// セクションごとのパディング
+.section_title {
+  text-align: center;
+  font-family: "Sriracha", cursive, sans-serif;
+  font-size: 3.5em;
+  position: relative;
+  padding: 5px;
+  &::before {
+    content: "";
+    height: 3px;
+    width: 100px;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: $background2;
+  }
+}
+
+.main_container {
+  max-width: 850px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+main {
+  letter-spacing: 0.1em;
+  color: $color1;
+
+  ::selection {
+    background: $color1;
+    color: $color2;
+  }
+  //Firefox
+  ::-moz-selection {
+    background: $background2;
+    color: $background3;
+  }
+}
+
+// About
+.about h1 {
+  opacity: 0;
+}
+.about_flex {
+  margin-top: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px;
+  box-shadow: 0px 0px 10px 2px rgba(0, 0, 0, 0.5);
+  border-radius: 20px;
+  opacity: 0;
+
+  .about_left {
+    width: 40%;
+
+    .about_image_frame {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      width: 300px;
+      height: 300px;
+      background-color: $background2;
+      border-radius: 150px;
+
+      img {
+        border-radius: 150px;
+        height: 290px;
+        width: 290px;
+      }
+    }
+  }
+
+  .about_right {
+    width: 55%;
+
+    .my_name {
+      font-size: 1.6em;
+      padding: 15px 0;
+      margin-top: 15px;
+      text-shadow: -1px -2px 3px rgb(0, 0, 0);
+      position: relative;
+      font-family: "Sriracha", cursive, sans-serif;
+      &::before {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        height: 1px;
+        width: 125px;
+        background-color: $background2;
+      }
+    }
+    .about_caption {
+      font-weight: 600;
+      height: 250px;
+      overflow: auto;
+    }
+
+    .about_caption p {
+      margin-bottom: 10px;
+    }
+    .about_caption p:first-child {
+      margin-top: 25px;
+    }
+
+    .icon_list ul {
+      margin-top: 15px;
+      display: flex;
+      justify-content: flex-end;
+
+      li {
+        margin: 0 5px;
+      }
+    }
+  }
+}
+
+// Skills
+.skill_text {
+  font-size: 1.2em;
+  font-weight: 600;
+  text-align: center;
+  margin: 50px 0;
+}
+
+.skill_caption1,
+.skill_caption2 {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 15px;
+  padding: 15px;
+
+  opacity: 0;
+
+  li i {
+    transition: all 0.5s;
+  }
+
+  li p {
+    text-align: center;
+  }
+}
+
+// Works
+
+button {
+  border: 1px solid $color1;
+  padding: 5px 25px;
+  border-radius: 10px;
+  background-color: transparent;
+  color: $color1;
+  margin: 5px;
+  outline: none;
+  cursor: pointer;
+}
+
+.works {
+  padding-bottom: 100px;
+}
+
+.works_item:first-child {
+  margin-top: 80px;
+}
+
+.works_item {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+  margin-top: 20px;
+
+  opacity: 0;
+
+  .works_left {
+    width: 25%;
+
+    .works_title {
+      padding: 10px 5px;
+      margin-top: 50px;
+      position: relative;
+      font-size: 1.1em;
+
+      &::before {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        height: 1px;
+        width: 200px;
+        background-color: $background2;
+      }
+    }
+    .works_caption {
+      margin-top: 30px;
+      padding: 5px;
+      ul {
+        font-size: 0.9em;
+      }
+    }
+  }
+
+  .works_right {
+    width: 60%;
+    height: 90%;
+
+    .works_image_frame {
+      width: 100%;
+      height: 80%;
+      border-radius: 10px;
+      cursor: pointer;
+
+      :hover {
+        box-shadow: 3px 3px 10px 5px $background2;
+        transform: translateY(-5px);
+        border-radius: 10px;
+      }
+      img {
+        transition: all 0.3s;
+        width: 100%;
+        height: 100%;
+        border-radius: 10px;
+      }
+    }
+  }
+}
+
+.works_item_2 {
+  flex-direction: row-reverse;
+}
+
+// フッター
+footer {
+  border-top: 1px solid $background2;
+  color: $color1;
+  letter-spacing: 0.1em;
+  font-size: 0.8em;
+  font-family: "Sriracha", cursive, sans-serif;
+
+  .footer_item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .copy {
+    padding: 5px;
+  }
+
+  .btn_scroll {
+    color: white;
+    transition: 0.3s;
+    padding: 0 25px;
+    margin-right: 25px;
+  }
+  .btn_scroll i {
+    line-height: 50px;
+  }
+  .btn_scroll:hover {
+    transform: translateY(-5px);
+  }
+
+  .icon {
+    padding: 5px;
+    margin-right: 5px;
+    :hover {
+      opacity: 0.8;
+    }
+    .twitter {
+      color: rgb(76, 124, 212);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+    }
+    .git {
+      color: gray;
+      margin-left: 5px;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+    }
+  }
+}
+
+// メディアクエリ
+
+@media screen and (max-width: 1024px) {
+  /* 1024pxからの幅の場合に適応される */
+  body {
+    font-size: 16px;
+  }
+  .container {
+    max-width: 980px;
+  }
+  .main_container {
+    max-width: 750px;
+  }
+
+  // About
+  .about_left {
+    .about_image_frame {
+      height: 105%;
+      width: 105%;
+
+      img {
+        height: 100%;
+        width: 100%;
+      }
+    }
+  }
+  // Works
+  .works_left {
+    width: 40%;
+  }
+}
+@media screen and (max-width: 800px) {
+  /* 800pxからの幅の場合に適応される */
+  body {
+    font-size: 15px;
+  }
+  .container {
+    max-width: 740px;
+  }
+
+  .main_container {
+    max-width: 550px;
+  }
+
+  // Font awesomeサイズ
+  .i_lg {
+    font-size: 9em;
+  }
+
+  // ヘッダー
+
+  .header {
+    &_content {
+      &_nav {
+        display: none;
+      }
+
+      .toggle_wrap {
+        display: block;
+      }
+    }
+  }
+
+  // ファーストビュー
+
+  .fv {
+    &_content {
+      text-align: center;
+      &_welcome {
+        padding: 0px;
+        &::after {
+          width: 100px;
+          left: 5%;
+        }
+      }
+      &_title {
+        font-size: 3.5em;
+      }
+      &_text {
+        font-size: 0.9em;
+      }
+    }
+  }
+
+  // メイン
+  // About
+
+  .about_flex {
+    display: block;
+    text-align: center;
+
+    .about_left {
+      width: 100%;
+      margin-top: 20px;
+      display: flex;
+      justify-content: center;
+    }
+
+    .about_right {
+      width: 100%;
+      .about_caption {
+        height: 100%;
+        font-weight: 500;
+      }
+      .icon_list {
+        ul {
+          justify-content: center;
+        }
+      }
+    }
+  }
+
+  // Skills
+  .skill_text {
+    font-weight: 500;
+  }
+
+  // Works
+  .works_item {
+    .works_left {
+      .works_title {
+        margin-top: 0px;
+        &::before {
+          width: 100px;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 650px) {
+  /* 650pxからの幅の場合に適応される */
+
+  // Works
+
+  .works_item {
+    display: block;
+
+    &:first-child {
+      margin-top: 40px;
+    }
+
+    .works_left {
+      width: 100%;
+
+      .works_title {
+        margin-top: 30px;
+        font-size: 1.5em;
+        &::before {
+          width: 300px;
+        }
+      }
+
+      .works_caption {
+        font-size: 1.2em;
+        ul {
+          display: flex;
+          li {
+            margin: 0 10px;
+          }
+        }
+      }
+    }
+    .works_right {
+      width: 100%;
+      margin-top: 20px;
+    }
+  }
+}
+@media screen and (max-width: 480px) {
+  /* 480pxからの幅の場合に適応される */
+
+  .main_container {
+    max-width: 360px;
+  }
+
+  .header_content{
+    .toggle_wrap{
+      .toggle{
+        padding: 20px;
+      }
+    }
+  }
+
+  
+  body {
+    font-size: 14px;
+  }
+
+  // Font awesomeサイズ
+  .i_lg {
+    font-size: 6em;
+  }
+
+  .fv {
+    &_content {
+      &_text {
+        font-size: 0.95em;
+        letter-spacing: 0;
+      }
+    }
+  }
+
+  .works {
+    padding-bottom: 40px;
+  }
+
+}
+@media screen and (max-width: 320px) {
+  /* 320pxからの幅の場合に適応される */
+  body {
+    font-size: 12px;
+  }
+  // メイン
+  // Works
+   .works_item {
+
+    &:first-child {
+      margin-top: 10px;
+    }
+
+    .works_left {
+      width: 100%;
+
+      .works_title {
+        margin-top: 0px;
+        font-size: 1.3em;
+        &::before {
+          width: 250px;
+        }
+      }
+
+      .works_caption {
+        font-size: 1.1em;
+        ul {
+          display: flex;
+          li {
+            margin: 0 5px;
+            border-bottom: 1px solid $color1;
+          }
+        }
+      }
+    }
+
+  }
+
+  // Font awesomeサイズ
+    .i_sm {
+      font-size: 20px;
+    }
+  // フッター
+    footer {
+      .btn_scroll {
+        margin-right: 55px;
+      }
+    }
+
+
+}
+
+
+// ホバー時のカラー
+.skill_caption1 li:nth-child(1):hover .html {
+  color: rgb(255, 115, 0);
+}
+.skill_caption1 li:nth-child(2):hover .css {
+  color: rgb(97, 111, 189);
+}
+.skill_caption1 li:nth-child(3):hover .js {
+  color: rgb(224, 255, 86);
+}
+.skill_caption2 li:nth-child(1):hover .vue {
+  color: rgb(65, 252, 127);
+}
+.skill_caption2 li:nth-child(2):hover .php {
+  color: rgb(211, 119, 230);
+}
+.skill_caption2 li:nth-child(3):hover .git {
+  color: rgba(168, 168, 168, 0.726);
+}
+
+// アニメーションキーフレーム
+@keyframes pen-animation {
+  0% {
+    left: 0;
+    transform: translateY(10px);
+  }
+  10% {
+    left: 30px;
+    transform: translateY(-10px);
+    opacity: 1;
+  }
+  20% {
+    left: 45px;
+    transform: translateY(10px);
+  }
+  30% {
+    left: 50px;
+    transform: translateY(-10px);
+  }
+  50% {
+    left: 60px;
+    transform: translateY(10px);
+  }
+  60% {
+    left: 75px;
+    transform: translateY(-10px);
+  }
+  70% {
+    transform: translateX(10px);
+    transform: translateY(25px);
+  }
+  80% {
+    rtransform: translateX(50px);
+    transform: translateY(25px);
+  }
+  100% {
+    transform: translateY(25px);
+    transform: translateX(100px);
+    opacity: 1;
+  }
+}
+@keyframes border {
+  0% {
+    transform: scale(0);
+  }
+  20%,
+  50%,
+  70% {
+    transform: scale(0);
+    opacity: 1;
+  }
+  100% {
+    transform: scaleX(1);
+    opacity: 1;
+  }
+}
