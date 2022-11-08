@@ -888,6 +888,14 @@ footer {
   }
 }
 
+  .fix_text {
+    font-size: 4px;
+    color: rgb(255, 152, 68);
+  }
+  .fix_works {
+    cursor:help;
+  }
+
 @media screen and (max-width: 650px) {
   /* 650pxからの幅の場合に適応される */
 
